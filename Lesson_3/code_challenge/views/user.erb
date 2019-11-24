@@ -1,0 +1,17 @@
+<h2>Email: </h2>
+<h3><%= @email %></h3>
+
+<h2>Interests:</h2>
+<% @interests.each do |interest| %>
+  <h3><%= interest %></h3>
+<% end %>
+<br>
+
+<footer>
+  <h4>Other Users</h4>
+  <ul>
+    <% @users.select{|user| user != @name}.each do |user| %>
+      <li><a href="/<%= user %>"><%= user %></a></li>
+    <% end %>
+  </ul>
+<footer>
